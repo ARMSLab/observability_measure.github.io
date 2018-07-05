@@ -7,7 +7,8 @@ t = Ts/10;
 model =@(x,u)nonlin_eq_DL(x,u,sys);
 y=zeros(12,1622);
 un = zeros(4,1622);
- [tall,y(1,:),y(2,:),y(3,:),y(4,:),y(5,:),y(6,:),y(7,:),y(8,:),y(9,:),y(10,:),y(11,:),y(12,:)]= textread('mpc.txt','%f %f %f %f %f %f %f %f %f %f %f %f %f');
+ [tall,y(1,:),y(2,:),y(3,:),y(4,:),y(5,:),y(6,:),y(7,:),y(8,:),y(9,:),y(10,:),y(11,:),y(12,:)]= ... 
+               textread('mpc.txt','%f %f %f %f %f %f %f %f %f %f %f %f %f');
  [tall,un(1,:),un(2,:),un(3,:),un(4,:)]= textread('u_log.txt','%f %f %f %f %f');
 
 for i=1:12
