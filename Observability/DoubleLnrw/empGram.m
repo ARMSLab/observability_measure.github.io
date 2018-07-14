@@ -1,5 +1,6 @@
 function W= empGram(ind,C,x,u,epsi,Ts,t,model)
-    
+%This function is to calculate empirical gramian
+
     W=zeros(size(x,1));
     Y=zeros(size(C,1),floor(Ts/t),size(x,1));
     for i =1:size(x,1)
