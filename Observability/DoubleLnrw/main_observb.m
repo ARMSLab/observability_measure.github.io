@@ -1,12 +1,11 @@
-C = eye(12,12);
-W_emp=zeros(12,12,12);
-
-Ts=0.01;
-epsi=0.001;
-t = Ts/10;
-model =@(x,u)nonlin_eq_DL(x,u,sys);
-y=zeros(12,1622);
-un = zeros(4,1622);
+C = eye(12,12); %Create output matrix C = dh/dx
+W_emp=zeros(12,12,12); % create matrix to store data for each sensors 
+Ts=0.01; % sampling time of the data
+epsi=0.001; % perturbation value
+t = Ts/10;  %sampling time for imperical gramian
+model =@(x,u)nonlin_eq_DL(x,u,sys); %model of the system 
+y=zeros(12,1622); % initialization matrix for MPC data
+un = zeros(4,1622); % initialization of matrix for inputs of MPC
  [tall,y(1,:),y(2,:),y(3,:),y(4,:),y(5,:),y(6,:),y(7,:),y(8,:),y(9,:),y(10,:),y(11,:),y(12,:)]= ... 
                textread('mpc.txt','%f %f %f %f %f %f %f %f %f %f %f %f %f');
  [tall,un(1,:),un(2,:),un(3,:),un(4,:)]= textread('u_log.txt','%f %f %f %f %f');
