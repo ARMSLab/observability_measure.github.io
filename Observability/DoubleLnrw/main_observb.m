@@ -30,3 +30,5 @@ for j=1:length(k)
         ind=j;
     end
 end
+k{ind}
+m
