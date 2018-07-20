@@ -1,4 +1,6 @@
 show_downloads: "true"
+github:
+  repository_url: https://github.com/ARMSLab/slmpc/
 theme: jekyll-theme-cayman
 title: Observability Gramian Based Optimal Sensor Placement
 description: ARMS Laboratory, arms.nu.edu.kz
