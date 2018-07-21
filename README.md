@@ -59,7 +59,7 @@ end
 %Seven's order derivative is sufficient.
 for ind1=1:4
     for ind2=2:7
-        Y(ind2,ind1) = lder(Y(ind2-1,ind1),dy,x);
+        Y(ind2,ind1) = <a href="https://observability_measure.github.io/Observability/VSAwrw/lder.m">lder</a>(Y(ind2-1,ind1),dy,x);
         for ind3=1:ind2
             Y(ind2,ind1) =  Y(ind2,ind1) + lder(Y(ind2-1,ind1),U(:,ind2),U(:,ind2-1));
         end
@@ -78,26 +78,3 @@ rank([K(:,:,1); K(:,:,2)])
 </pre>
 
 2) Observability Gramian can be calculated using two different ways: Empirical and Linearized
-
-Here is code for Linearized Gramian Calculation:
-<pre>
-<code class="matlab">
-function W_lin = observGramLin(C,Ts,x,u,sys)
-    W_lin = zeros(size(x,1));
-    for ind=1:length(x)
-        Phi = phi(ind,x,u,Ts,sys);
-        L=C*Phi;
-        W_lin = W_lin + (L'*L)*Ts;
-    end
-end
-
-function Phi = phi(ind,x,u,Ts,sys)
-    Phi=eye(size(x,1));
-        for ind2=1:ind
-            dx = nonlin_eq_VSA(x(:,ind2),u(:,ind2),sys);
-            [A,B,K] = linearize_model_VSA(x(:,ind2),dx,u(:,ind2),sys);
-            Phi = Phi + expm(A*Ts);
-        end
-end
-</code>
-</pre>
