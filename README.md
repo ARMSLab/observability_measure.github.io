@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="/observability_measure.gihub.io/default.css">
+<script src="/observability_measure.gihub.io/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -33,12 +36,12 @@ In this tutorial two different systems are presented
 Here, only VSA robot with reaction wheel is presented. However, you can find second one in downloads flies.
 
 ##Observability Measure
-Observability Ranc Condition for Nonlinear systems can be calculated using following MATLAB script. More information can be found in paper:
+1) Observability Ranc Condition for Nonlinear systems can be calculated using following MATLAB script. More information can be found in paper:
 <pre>
 <code class="matlab">
+U= sym('U',[3,7]); %input-space
+x =sym('x',[7,1]); %state-space
 
-   U= sym('U',[3,7]); %input-space
-    x =sym('x',[7,1]); %state-space
 dy = nonlin_eq_VSA(x,U(:,1), sys) ; %nonlinear dynamics of the system     
 C=zeros(4,7);                       % create matrix of ouputs so that y=C*x
 C(1,1)=1;
@@ -52,7 +55,7 @@ for ind=1:4
     Y(:,ind) = C(ind,:)*x;
 end
 
-% find time derivatives of each sensors independently to fill the Y
+% find time derivatives of each sensors independently to fill the Y. Seven's order derivative is sufficient.
 for ind1=1:4
     for ind2=2:7
         Y(ind2,ind1) = lder(Y(ind2-1,ind1),dy,x);
@@ -72,3 +75,9 @@ end
 rank([K(:,:,1); K(:,:,2)])
 </code>
 </pre>
+
+2) Observability Gramian can be calculated using two different ways: Empirical and Linearized
+
+Here is code for Linearized Gramian Calculation:
+<pre>
+<code class="matlab">
