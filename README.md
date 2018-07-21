@@ -42,7 +42,7 @@ Here, only VSA robot with reaction wheel is presented. However, you can find sec
 U= sym('U',[3,7]); %input-space
 x =sym('x',[7,1]); %state-space
 
-dy = nonlin_eq_VSA(x,U(:,1), sys) ; %nonlinear dynamics of the system     
+dy = <a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/nonlin_eq_VSA.m">nonlin_eq_VSA</a>(x,U(:,1), sys) ; %nonlinear dynamics of the system     
 C=zeros(4,7);                       % create matrix of ouputs so that y=C*x
 C(1,1)=1;
 C(2,3)=1;
