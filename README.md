@@ -1,6 +1,7 @@
-<link rel="stylesheet" href="/observability_measure.gihub.io/default.css">
-<script src="/observability_measure.gihub.io/highlight.pack.js"></script>
+<link rel="stylesheet" href="/observability_measure.github.io/default.css">
+<script src="/observability_measure.github.io/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
