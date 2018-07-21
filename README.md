@@ -33,22 +33,26 @@ In this tutorial two different systems are presented
 Here, only VSA robot with reaction wheel is presented. However, you can find second one in downloads flies.
 
 ##Observability Measure
-Observability Ranc Condition for Nonlinear systems can be calculated using following MATLAB script:
+Observability Ranc Condition for Nonlinear systems can be calculated using following MATLAB script. More information can be found in paper:
 <pre>
 <code class="matlab">
-   U= sym('U',[3,7]);
-    x =sym('x',[7,1]);
-dy = nonlin_eq_VSA(x,U(:,1), sys) ;     
-C=zeros(4,7);
+
+   U= sym('U',[3,7]); %input-space
+    x =sym('x',[7,1]); %state-space
+dy = nonlin_eq_VSA(x,U(:,1), sys) ; %nonlinear dynamics of the system     
+C=zeros(4,7);                       % create matrix of ouputs so that y=C*x
 C(1,1)=1;
 C(2,3)=1;
 C(3,4)=1;
 C(4,5)=1;
 C=sym(C);
-Y=sym(zeros(7,4));
+
+Y=sym(zeros(7,4));            %sensor-space y=[s1,...,s4; dot_s1,...,s4;...]
 for ind=1:4
     Y(:,ind) = C(ind,:)*x;
 end
+
+% find time derivatives of each sensors independently to fill the Y
 for ind1=1:4
     for ind2=2:7
         Y(ind2,ind1) = lder(Y(ind2-1,ind1),dy,x);
@@ -57,10 +61,14 @@ for ind1=1:4
         end
     end
 end
-%%
-K=sym(zeros(7,7,4));
+% 
+K=sym(zeros(7,7,4)); 
 for ind1=1:4
-    K(:,:,ind1) = jacobian(Y(:,ind1),x);
+    K(:,:,ind1) = jacobian(Y(:,ind1),x);  % for each sensors create the observability matrix  independently
 end
+
+%%
+%to find observability of combination of sensor 1 and 2:
+rank([K(:,:,1); K(:,:,2)])
 </code>
 </pre>
