@@ -59,9 +59,9 @@ end
 %Seven's order derivative is sufficient.
 for ind1=1:4
     for ind2=2:7
-        Y(ind2,ind1) = <a href="https://observability_measure.github.io/Observability/VSAwrw/lder.m">lder</a>(Y(ind2-1,ind1),dy,x);
+        Y(ind2,ind1) = <a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/lder.m">lder</a>(Y(ind2-1,ind1),dy,x);
         for ind3=1:ind2
-            Y(ind2,ind1) =  Y(ind2,ind1) + lder(Y(ind2-1,ind1),U(:,ind2),U(:,ind2-1));
+            Y(ind2,ind1) =  Y(ind2,ind1) + <a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/lder.m">lder</a>(Y(ind2-1,ind1),U(:,ind2),U(:,ind2-1));
         end
     end
 end
