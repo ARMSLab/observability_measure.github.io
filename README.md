@@ -55,7 +55,8 @@ for ind=1:4
     Y(:,ind) = C(ind,:)*x;
 end
 
-% find time derivatives of each sensors independently to fill the Y. Seven's order derivative is sufficient.
+% find time derivatives of each sensors independently to fill the Y.
+%Seven's order derivative is sufficient.
 for ind1=1:4
     for ind2=2:7
         Y(ind2,ind1) = lder(Y(ind2-1,ind1),dy,x);
@@ -67,7 +68,7 @@ end
 % 
 K=sym(zeros(7,7,4)); 
 for ind1=1:4
-    K(:,:,ind1) = jacobian(Y(:,ind1),x);  % for each sensors create the observability matrix  independently
+    K(:,:,ind1) = jacobian(Y(:,ind1),x);  %for each sensors create the observability matrix
 end
 
 %%
