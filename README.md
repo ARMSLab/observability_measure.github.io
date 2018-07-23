@@ -115,19 +115,19 @@ The following problem is the notation for optimal Sensor placement:
 This is [Binary Integer Problem](http://www.optimization-online.org/DB_FILE/2009/06/2329.pdf). The cost function is $J(y) = log(det(W^{-1}))$.
 
 This code provides implementation of the observability Gramian based sensor minimization problem solution:
+
 <pre>
 <code class="matlab">
+
 load('data.mat'); % loads the data of simulation
 C = eye(7,7);     % y=C*x
 t = Ts/10;        % sampling time of emprircal gramian compared to sampling time of trajectory
 epsi=0.001;       % perturbation of empirical gramian
-
 model =@(x,u)<a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/nonlin_eq_VSA.m">lnonlin_eq_VSA</a>(x,u,sys);   %nonlinear dynamics of the system
 W_emp=zeros(7,7,7);                    %initialization to store all sensor's empirical gramian 
 for i=1:7
      W_emp(:,:,i) =<a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/observGramEmp.m">observGramEmp</a>(C(i,:),t,Ts,y,epsi,un',model); %<a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/observGramLin.m">observGramLin</a>(C(i,:),Ts,y,un',sys);%
 end
-
 k=<a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/valid_sensor_conf.m">valid_sensor_conf</a>([1,3,4,5],4); % the all sensor configurations that should be checked
 m = 1e90;                         % maximal number
 ind=1;                            %initialization for index
