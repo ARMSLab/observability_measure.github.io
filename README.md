@@ -152,5 +152,6 @@ end
 
 k{ind}  %the sensor optimal configuration
 m       % the value of cost function
+
 </code>
 </pre>
