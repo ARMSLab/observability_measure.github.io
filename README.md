@@ -25,7 +25,9 @@ In this tutorial the observability is measured for Variable Stiffness Actuator S
 y&=Cx+Du
 \end{align}
 `x` - states of the system
+
 `u` - input
+
 `y` - output
 
 ##Key concepts
@@ -95,4 +97,6 @@ y^{\pm i} & = h(\bar{x}^{\pm i}(t)) \newline
 W(i,j) &= \frac{1}{4\epsilon^2}\int^{T}_0 (y^{+i} - y^{-i})^T(y^{+j} - y^{-j})dt,
 \end{align}
 
-$\epsilon$
+$\epsilon$ - perturbation scalar, in majority of cases 0.001 is sufficient number.
+
+$e_k $ - $k$'s uni vector, i.e. $e_2 \in mathbb{R}^4 = [0 1 0 0]^T$
