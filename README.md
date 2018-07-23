@@ -30,7 +30,7 @@ y&=Cx+Du
 
 `y` - output
 
-##Key concepts
+## Key concepts
 Optimal Sensor placement problem is type of problem where the sensory devices are integrated to the system to satisfy some specified condition. In conventional robotic systems, sensors are placed to guarantee the full observability of the system. Observability of Linear System could be found [here](https://en.wikipedia.org/wiki/Observability). For nonliner systems, system could be unobservable for some specific set of configurations in the state-space. However, for some specific cases the system could have more than one fully observable sensor configurations. For such cases it is hard to gain intuition on which of observable states are "better". Therefore observability measure is introduced.
 
 In this tutorial two different systems are presented
@@ -38,7 +38,7 @@ In this tutorial two different systems are presented
   2. Double linked VSA robot
 Here, only VSA robot with reaction wheel is presented. However, you can find second one in downloads flies.
 
-##Observability Measure
+## Observability Measure
 1) Observability Ranc Condition for Nonlinear systems can be calculated using following MATLAB script. More information can be found in paper:
 <pre>
 <code class="matlab">
@@ -103,7 +103,7 @@ $e_k $ - $k$'s unit vector, i.e. $e_2 \in \mathbb{R}^4 = [0 ,1 ,0 ,0]^T$.
 
 Emperical gramian provides same results as Linarized Gramian, but it is is computationally faster. 
 
-##Sensor placement problem is solved
+## Sensor placement problem is solved
 The following problem is the notation for optimal Sensor placement:
     \begin{align}
             & \min_{s_1,s_2,\dots,s_p} J(y)\newline
