@@ -118,7 +118,6 @@ This code provides implementation of the observability Gramian based sensor mini
 
 <pre>
 <code class="matlab">
-
 load('data.mat'); % loads the data of simulation
 C = eye(7,7);     % y=C*x
 t = Ts/10;        % sampling time of emprircal gramian compared to sampling time of trajectory
@@ -152,8 +151,5 @@ end
 
 k{ind}  %the sensor optimal configuration
 m       % the value of cost function
-
 </code>
 </pre>
-
-Here is the end
