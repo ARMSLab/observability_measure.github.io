@@ -99,4 +99,16 @@ W(i,j) &= \frac{1}{4\epsilon^2}\int^{T}_0 (y^{+i} - y^{-i})^T(y^{+j} - y^{-j})dt
 
 $\epsilon$ - perturbation scalar, in majority of cases 0.001 is sufficient number.
 
-$e_k $ - $k$'s uni vector, i.e. $e_2 \in mathbb{R}^4 = [0 1 0 0]^T$
+$e_k $ - $k$'s uni vector, i.e. $e_2 \in \mathbb{R}^4 = [0 ,1 ,0 ,0]^T$.
+
+Emperical gramian provides same results as Linarized Gramian, but it is is computationally faster. 
+
+##Sensor placement problem is solved
+The following problem is the notation for optimal Sensor placement:
+    \begin{align}
+            & \min_{s_1,s_2,\dots,s_p} J(y)\newline
+            \subjto ~
+            & \dot{x} = f(x,u) \newline
+            y &= [s_1h_1(x), s_2h_2(x), \dots, s_p h_p(x)]^T \newline
+            s_i &\in \{0,1\}, ~ i=1,\dots,p
+    \end{align}
