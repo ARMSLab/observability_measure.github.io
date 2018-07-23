@@ -107,7 +107,7 @@ Emperical gramian provides same results as Linarized Gramian, but it is is compu
 The following problem is the notation for optimal Sensor placement:
     \begin{align}
             & \min_{s_1,s_2,\dots,s_p} J(y)\newline
-            \text{subject to:}
+            \text{subject to:} \newline
             & \dot{x} = f(x,u) \newline
             y &= [s_1h_1(x), s_2h_2(x), \dots, s_p h_p(x)]^T \newline
             s_i &\in \{0,1\}, ~ i=1,\dots,p
