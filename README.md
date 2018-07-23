@@ -89,9 +89,8 @@ In linearized case, Gramian for nonlinear system calculated as linear one by lin
 
 Implementation of this method can be found in tutorial. 
 In empirical Gramian method, the Gramian is calculated by perturbing the states and calculation of the outputs:
-    \begin{align}
-        \text{Let perturb the initial state with unit vector $e$ as:} \bar{x_0} = x_0 \pm \epsilon e_i  \newline
-        \text{If output for such initial state after some} \newline
-        \text{time $t$ are $y^{+i}(t),y^{-i}(t)$, then:}  \newline
-        W_{i,j} = \frac{1}{4\epsilon^2}\int^{T}_0 (y^{+i}(t) - y^{-i}(t))^T(y^{+j}(t) - y^{-j}(t))dt
-    \end{align}
+\begin{align}
+        \bar{x}^{\pm k}_0 = x_0 \pm \epsilon e_k  \newline
+        y^{\pm i} & = h(\bar{x}^{\pm i}(t)) \newline
+        W(i,j) &= \frac{1}{4\epsilon^2}\int^{T}_0 (y^{+i} - y^{-i})^T(y^{+j} - y^{-j})dt,
+\end{align}
