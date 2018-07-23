@@ -1,1 +1,2 @@
-In this file there are 3 distinct tutorials
+In this file there are 2 distinct tutorials
+Run the main_observabilit.m file. 
