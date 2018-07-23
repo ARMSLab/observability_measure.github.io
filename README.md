@@ -107,9 +107,50 @@ Emperical gramian provides same results as Linarized Gramian, but it is is compu
 The following problem is the notation for optimal Sensor placement:
     \begin{align}
             & \min_{s_1,s_2,\dots,s_p} J(y)\newline
-            \subjto ~
+            \text{subject to:}
             & \dot{x} = f(x,u) \newline
             y &= [s_1h_1(x), s_2h_2(x), \dots, s_p h_p(x)]^T \newline
             s_i &\in \{0,1\}, ~ i=1,\dots,p
     \end{align}
-This is [Binary Integer Problem](http://www.optimization-online.org/DB_FILE/2009/06/2329.pdf)
+This is [Binary Integer Problem](http://www.optimization-online.org/DB_FILE/2009/06/2329.pdf). The cost function is $J(y) = log(det(W^{-1}))$.
+
+This code provides implementation of the observability Gramian based sensor minimization problem solution:
+<pre>
+<code class="matlab">
+load('data.mat'); % loads the data of simulation
+C = eye(7,7);     % y=C*x
+t = Ts/10;        % sampling time of emprircal gramian compared to sampling time of trajectory
+epsi=0.001;       % perturbation of empirical gramian
+
+model =@(x,u)nonlin_eq_VSA(x,u,sys);   %nonlinear dynamics of the system
+W_emp=zeros(7,7,7);                    %initialization to store all sensor's empirical gramian 
+for i=1:7
+     W_emp(:,:,i) = observGramEmp(C(i,:),t,Ts,y,epsi,un',model); %observGramLin(C(i,:),Ts,y,un',sys);%
+end
+
+k=valid_sensor_conf([1,3,4,5],4); % the all sensor configurations that should be checked
+m = 1e90;                         % maximal number
+ind=1;                            %initialization for index
+obm = zeros(length(k),1);         % vector to store the observabilities of all valid sensor configurations
+
+%optimization to find minimal cost function over valid sensor configurations
+for j=1:length(k)
+    W=zeros(7,7);
+    C=zeros(length(k{j}),7);
+    for i=1:length(k{j})
+        C(i,k{j}(i))=1;
+    end
+    for i=1:length(k{j})
+        W=W+W_emp(:,:,k{j}(i));%W=W+observGramEmp(C(i,:),t,Ts,y,epsi,un',model);
+    end
+    obm(j)=log(det(W^(-1)));
+    if(obm(j)<m)
+        m = obm(j);
+        ind=j;
+    end
+end
+
+k{ind}  %the sensor optimal configuration
+m       % the value of cost function
+</code>
+</pre>
