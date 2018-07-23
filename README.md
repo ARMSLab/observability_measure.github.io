@@ -128,7 +128,7 @@ for i=1:7
      W_emp(:,:,i) =<a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/observGramEmp.m">observGramEmp</a>(C(i,:),t,Ts,y,epsi,un',model); %<a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/observGramLin.m">observGramLin</a>(C(i,:),Ts,y,un',sys);%
 end
 
-k=<a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/observGramEmp.m">valid_sensor_conf</a>([1,3,4,5],4); % the all sensor configurations that should be checked
+k=<a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/valid_sensor_conf.m">valid_sensor_conf</a>([1,3,4,5],4); % the all sensor configurations that should be checked
 m = 1e90;                         % maximal number
 ind=1;                            %initialization for index
 obm = zeros(length(k),1);         % vector to store the observabilities of all valid sensor configurations
