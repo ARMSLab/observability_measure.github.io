@@ -21,7 +21,7 @@ In this tutorial the observability measure based optimal sensor placement is con
 4. Observability Gramian
 5. Implementation
 
-The MATLAB implementation of the tutorial can be downloaded from the above link. The tutorial shows the implementation of the Optimal Sensor Placement discussed in the paper (link to the paper). In this tutorial two different systems are considered:
+The [MATLAB](https://www.mathworks.com/products/matlab.html) implementation of the tutorial can be downloaded from the above link. The tutorial shows the implementation of the Optimal Sensor Placement discussed in the paper (link to the paper). In this tutorial two different systems are considered:
   1. VSA robot with reaction wheel
   2. Double linked VSA robot
   
@@ -61,16 +61,12 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 
 **2.** Observability Measure: Information about Observability for linear systems can be found here [here](https://en.wikipedia.org/wiki/Observability). The main idea of *observability* is if it is possible to restore the states of the system `x` from the sensor readings `y` and inputs `u` given some configuration of sensors `s`. The observability Measure provides the information on how changes in sensor-space maps to changes on state-space, or simplified, how $\Delta y$ is related to $\Delta x$.
 
-**3.** Observability Gramian: [Symmetric Positive Definite Matrix](https://en.wikipedia.org/wiki/Positive-definite_matrix) that can be utilized for observability measure.
+**3.** Observability Gramian: [Symmetric Positive Definite Matrix](https://en.wikipedia.org/wiki/Positive-definite_matrix) that can be utilized for observability measure. 
 
+**4.** 
 
 ##add some visuals
 ##add trajectory
-
-
-Optimal Sensor placement problem is type of problem where the sensory devices are integrated to the system to satisfy some specified condition. In conventional robotic systems, sensors are placed to guarantee the full observability of the system. Observability of Linear System could be found . For nonliner systems, system could be unobservable for some specific set of configurations in the state-space. However, for some specific cases the system could have more than one fully observable sensor configurations. For such cases it is hard to gain intuition on which of observable states are "better". Therefore observability measure is introduced.
-
-
 
 ## Observability Ranc Condition for Nonlinear Systems 
 
