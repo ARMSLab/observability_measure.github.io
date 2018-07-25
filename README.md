@@ -57,7 +57,7 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 
 
 ## Key concepts
-**1.** Oprimal Sensor Placement: The problem, where sensor configuration, position, orientation is selected by optimization of some cost function that represents desired specification and additional constraints.
+**1.** Oprimal Sensor Placement: The problem, where sensor configuration, position, orientation is selected by optimization of some cost function that represents desired specification subject to additional constraints. This tutorial contains only configuration selection from available separate sensors. 
 
 **2.** Observability Measure: Information about Observability for linear systems can be found here [here](https://en.wikipedia.org/wiki/Observability). The main idea of *observability* is if it is possible to restore the states of the system `x` from the sensor readings `y` and inputs `u` given some configuration of sensors `s`. The observability Measure provides the information on how changes in sensor-space maps to changes on state-space, or simplified, how $\Delta y$ is related to $\Delta x$.
 
@@ -71,15 +71,18 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 ## Observability Ranc Condition for Nonlinear Systems 
 
 ##Eloborate on what is ORC and what it means
-
-It can be calculated using following MATLAB script. More information can be found in paper:
+In linear systems, the observability rank condition provides genral information about system. However, for nonlinear systems, observability could change on states. Therefore, observability is slightly different for Nonlinear systems. The following code shows how to check observability for nonlinear systems in MATLAB using symbolic toolbox as it was described in paper:
 <pre>
 <code class="matlab">
 U= sym('U',[3,7]); %input-space
 x =sym('x',[7,1]); %state-space
 
-dy = <a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/nonlin_eq_VSA.m">nonlin_eq_VSA</a>(x,U(:,1), sys) ; %nonlinear dynamics of the system     
-C=zeros(4,7);                       % create matrix of ouputs so that y=C*x
+load('data.mat'); % loads the data about the VSA robot.  
+
+dy = <a href="https://github.com/ARMSLab/observability_measure.github.io/blob/master/Observability/VSAwrw/nonlin_eq_VSA.m">nonlin_eq_VSA</a>(x,U(:,1), sys) ; %nonlinear dynamics of the system    
+
+% create matrix of ouputs so that y=C*x
+C=zeros(4,7);                       
 C(1,1)=1;
 C(2,3)=1;
 C(3,4)=1;
@@ -101,6 +104,7 @@ for ind1=1:4
         end
     end
 end
+
 % 
 K=sym(zeros(7,7,4)); 
 for ind1=1:4
@@ -117,7 +121,7 @@ rank([K(:,:,1); K(:,:,2)])
 
 
 ## Observability Gramian
-2) Observability Gramian can be calculated using two different ways: Empirical and Linearized. 
+Observability Gramian for nonlinear system is slightly different fron linear one. In nonlinear system, the observability changes with the states. Also, system could use only specific region where it is observable and controllable. can be calculated using two different ways: Empirical and Linearized. 
 In linearized case, Gramian for nonlinear system calculated as linear one by linearization of the system and feeding the linearized matrix as following:
 
 \begin{align}
@@ -125,7 +129,7 @@ In linearized case, Gramian for nonlinear system calculated as linear one by lin
         \dot{\Phi(t)} = A(x(t),u(t))\Phi(t) \newline
         \Phi(0) = I
 \end{align}
-
+Here the matrix $\Phi$ represents the transition of the  
 Implementation of this method can be found in tutorial. 
 In empirical Gramian method, the Gramian is calculated by perturbing the states and calculation of the outputs:
 \begin{align}
