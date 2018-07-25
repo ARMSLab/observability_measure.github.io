@@ -59,7 +59,7 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 ## Key concepts
 **1.** Oprimal Sensor Placement: The problem, where sensor configuration, position, orientation is selected by optimization of some cost function that represents desired specification and additional constraints.
 
-**2.** Observability Measure: Information about Observability for linear systems can be found here [here](https://en.wikipedia.org/wiki/Observability). The main idea of **observability** is if it is possible to restore the states of the system `x` from the sensor readings `y` and inputs `u` given some configuration of sensors `s`. The observability Measure provides the information on how changes in sensor-space maps to changes on state-space, or simplified, how $\Delta y$ is related to $\Delta x$.
+**2.** Observability Measure: Information about Observability for linear systems can be found here [here](https://en.wikipedia.org/wiki/Observability). The main idea of *observability* is if it is possible to restore the states of the system `x` from the sensor readings `y` and inputs `u` given some configuration of sensors `s`. The observability Measure provides the information on how changes in sensor-space maps to changes on state-space, or simplified, how $\Delta y$ is related to $\Delta x$.
 
 **3.** Observability Gramian: [Symmetric Positive Definite Matrix](https://en.wikipedia.org/wiki/Positive-definite_matrix) that can be utilized for observability measure.
 
