@@ -15,9 +15,30 @@ MathJax.Hub.Config({
 
 # Tutorial on Observability Measure
 In this tutorial the observability measure based optimal sensor placement is considered. This tutorial shows the following steps for sensor placement problem:
-1. What is sensor placement problem and observability measure. Key concepts.
-2. How Observability is measured
-3. How the sensor placement problem is solved
+1. Optimal Sensor Placement
+2. Key concepts
+3. Observability Rank Condition for Nonlinear Systems
+4. Observability Gramian
+5. Implementation
+
+[//]: <>(1. What is sensor placement problem and observability measure. Key concepts.)
+[//]: <>(2. How Observability is measured)
+[//]: <>(3. How the sensor placement problem is solved)
+
+
+## Sensor placement problem 
+The following problem is the notation for optimal Sensor placement:
+    \begin{align}
+            & \min_{s_1,s_2,\dots,s_p} J(y)\newline
+            \text{subject to:} \newline
+            & \dot{x} = f(x,u) \newline
+            y &= [s_1h_1(x), s_2h_2(x), \dots, s_p h_p(x)]^T \newline
+            s_i &\in \{0,1\}, ~ i=1,\dots,p
+    \end{align}
+This is [Binary Integer Problem](http://www.optimization-online.org/DB_FILE/2009/06/2329.pdf). The cost function is $J(y) = log(det(W^{-1}))$.
+
+
+## Key concepts
 
 In this tutorial the observability is measured for Variable Stiffness Actuator System with following equation of dynamics
 \begin{align}
@@ -30,16 +51,25 @@ y&=Cx+Du
 
 `y` - output
 
-## Key concepts
-Optimal Sensor placement problem is type of problem where the sensory devices are integrated to the system to satisfy some specified condition. In conventional robotic systems, sensors are placed to guarantee the full observability of the system. Observability of Linear System could be found [here](https://en.wikipedia.org/wiki/Observability). For nonliner systems, system could be unobservable for some specific set of configurations in the state-space. However, for some specific cases the system could have more than one fully observable sensor configurations. For such cases it is hard to gain intuition on which of observable states are "better". Therefore observability measure is introduced.
 
 In this tutorial two different systems are presented
   1. VSA robot with reaction wheel
   2. Double linked VSA robot
 Here, only VSA robot with reaction wheel is presented. However, you can find second one in downloads flies.
 
-## Observability Measure
-1) Observability Ranc Condition for Nonlinear systems can be calculated using following MATLAB script. More information can be found in paper:
+##add some visuals
+##add trajectory
+
+
+Optimal Sensor placement problem is type of problem where the sensory devices are integrated to the system to satisfy some specified condition. In conventional robotic systems, sensors are placed to guarantee the full observability of the system. Observability of Linear System could be found [here](https://en.wikipedia.org/wiki/Observability). For nonliner systems, system could be unobservable for some specific set of configurations in the state-space. However, for some specific cases the system could have more than one fully observable sensor configurations. For such cases it is hard to gain intuition on which of observable states are "better". Therefore observability measure is introduced.
+
+
+
+## Observability Ranc Condition for Nonlinear Systems 
+
+##Eloborate on what is ORC and what it means
+
+It can be calculated using following MATLAB script. More information can be found in paper:
 <pre>
 <code class="matlab">
 U= sym('U',[3,7]); %input-space
@@ -80,6 +110,10 @@ rank([K(:,:,1); K(:,:,2)])
 </code>
 </pre>
 
+
+
+
+## Observability Gramian
 2) Observability Gramian can be calculated using two different ways: Empirical and Linearized. 
 In linearized case, Gramian for nonlinear system calculated as linear one by linearization of the system and feeding the linearized matrix as following:
 
@@ -103,16 +137,7 @@ $e_k $ - $k$'s unit vector, i.e. $e_2 \in \mathbb{R}^4 = [0 ,1 ,0 ,0]^T$.
 
 Emperical gramian provides same results as Linarized Gramian, but it is is computationally faster. 
 
-## Sensor placement problem is solved
-The following problem is the notation for optimal Sensor placement:
-    \begin{align}
-            & \min_{s_1,s_2,\dots,s_p} J(y)\newline
-            \text{subject to:} \newline
-            & \dot{x} = f(x,u) \newline
-            y &= [s_1h_1(x), s_2h_2(x), \dots, s_p h_p(x)]^T \newline
-            s_i &\in \{0,1\}, ~ i=1,\dots,p
-    \end{align}
-This is [Binary Integer Problem](http://www.optimization-online.org/DB_FILE/2009/06/2329.pdf). The cost function is $J(y) = log(det(W^{-1}))$.
+## Implementation of Optimal Sensor Placement
 
 This code provides implementation of the observability Gramian based sensor minimization problem solution:
 
@@ -153,3 +178,6 @@ k{ind}  %the sensor optimal configuration
 m       % the value of cost function
 </code>
 </pre>
+
+Result of this code: 
+
