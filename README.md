@@ -14,33 +14,26 @@ MathJax.Hub.Config({
 
 
 # Tutorial on Observability Measure
-In this tutorial the observability measure based optimal sensor placement is considered. This tutorial shows the following steps for sensor placement problem:
+In this tutorial the observability measure based optimal sensor placement is considered. This tutorial provides detailed disuccsion of the following steps of sensor placement problem:
 1. Optimal Sensor Placement
 2. Key concepts
 3. Observability Rank Condition for Nonlinear Systems
 4. Observability Gramian
 5. Implementation
 
+The MATLAB implementation of the tutorial can be downloaded from the above link. The tutorial shows the implementation of the Optimal Sensor Placement discussed in the paper (link to the paper). In this tutorial two different systems are considered:
+  1. VSA robot with reaction wheel
+  2. Double linked VSA robot
+Examples of this page shows only VSA robot with reaction wheel. However, you can find for second example download flies with well documented code.
+
+
 [//]: <>(1. What is sensor placement problem and observability measure. Key concepts.)
 [//]: <>(2. How Observability is measured)
 [//]: <>(3. How the sensor placement problem is solved)
 
 
-## Sensor placement problem 
-The following problem is the notation for optimal Sensor placement:
-    \begin{align}
-            & \min_{s_1,s_2,\dots,s_p} J(y)\newline
-            \text{subject to:} \newline
-            & \dot{x} = f(x,u) \newline
-            y &= [s_1h_1(x), s_2h_2(x), \dots, s_p h_p(x)]^T \newline
-            s_i &\in \{0,1\}, ~ i=1,\dots,p
-    \end{align}
-This is [Binary Integer Problem](http://www.optimization-online.org/DB_FILE/2009/06/2329.pdf). The cost function is $J(y) = log(det(W^{-1}))$.
-
-
-## Key concepts
-
-In this tutorial the observability is measured for Variable Stiffness Actuator System with following equation of dynamics
+## Optimal Sensor Placement problem 
+The following system dynamics is considered:
 \begin{align}
 \dot{x} &= f(x,u) \newline
 y&=Cx+Du
@@ -51,17 +44,28 @@ y&=Cx+Du
 
 `y` - output
 
+The following problem is the notation for Optimal Sensor placement:
+    \begin{align}
+            & \min_{s_1,s_2,\dots,s_p} J(y)\newline
+            \text{subject to:} \newline
+            & \dot{x} = f(x,u) \newline
+            y &= [s_1h_1(x), s_2h_2(x), \dots, s_p h_p(x)]^T \newline
+            s_i &\in \{0,1\}, ~ i=1,\dots,p
+    \end{align}
+This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/06/2329.pdf). The cost function is $J(y) = log(det(W^{-1}))$ chosen as it is described in the paper. The solution of this problem provides the vector `s` that represents which sensor configuration that is optimal. 
 
-In this tutorial two different systems are presented
-  1. VSA robot with reaction wheel
-  2. Double linked VSA robot
-Here, only VSA robot with reaction wheel is presented. However, you can find second one in downloads flies.
+
+## Key concepts
+**1.** Oprimal Sensor Placement: The problem, where sensor configuration, position, orientation is selected by optimization of some cost function that represents desired specification and additional constraints.
+**2.** Observability Measure: Information about Observability for linear systems can be found here [here](https://en.wikipedia.org/wiki/Observability). The main idea of **observability** is if it is possible to restore the states of the system `x` from the sensor readings `y` and inputs `u` given some configuration of sensors `s`. The observability Measure provides the information on how changes in sensor-space maps to changes on state-space, or simplified, how $\Delta y$ is related to $\Delta x$
+**3.** Observability Gramian: [Symmetric Positive Definite Matrix](https://en.wikipedia.org/wiki/Positive-definite_matrix) that can be utilized for observability measure.
+
 
 ##add some visuals
 ##add trajectory
 
 
-Optimal Sensor placement problem is type of problem where the sensory devices are integrated to the system to satisfy some specified condition. In conventional robotic systems, sensors are placed to guarantee the full observability of the system. Observability of Linear System could be found [here](https://en.wikipedia.org/wiki/Observability). For nonliner systems, system could be unobservable for some specific set of configurations in the state-space. However, for some specific cases the system could have more than one fully observable sensor configurations. For such cases it is hard to gain intuition on which of observable states are "better". Therefore observability measure is introduced.
+Optimal Sensor placement problem is type of problem where the sensory devices are integrated to the system to satisfy some specified condition. In conventional robotic systems, sensors are placed to guarantee the full observability of the system. Observability of Linear System could be found . For nonliner systems, system could be unobservable for some specific set of configurations in the state-space. However, for some specific cases the system could have more than one fully observable sensor configurations. For such cases it is hard to gain intuition on which of observable states are "better". Therefore observability measure is introduced.
 
 
 
