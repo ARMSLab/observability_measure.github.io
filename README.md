@@ -66,7 +66,7 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 **4.** 
 
 ##add some visuals
-##add trajectory
+
 
 ## Observability Ranc Condition for Nonlinear Systems 
 
@@ -121,7 +121,11 @@ rank([K(:,:,1); K(:,:,2)])
 
 
 ## Observability Gramian
-Observability Gramian for nonlinear system is slightly different fron linear one. In nonlinear system, the observability changes with the states. Also, system could use only specific region where it is observable and controllable. can be calculated using two different ways: Empirical and Linearized. 
+Observability Gramian for nonlinear system is slightly different fron linear one. In nonlinear system, the observability changes with the states. Also, system could use only specific region where it is observable and controllable. It is impossible to check observability for each state of the operation region. That is why trajectory is generated along which observability gramian is calculated. For VSA system trajectroy looks like following:
+
+##add trajectory
+
+Observability Gramian  can be calculated using two different ways: Empirical and Linearized. 
 In linearized case, Gramian for nonlinear system calculated as linear one by linearization of the system and feeding the linearized matrix as following:
 
 \begin{align}
@@ -129,7 +133,8 @@ In linearized case, Gramian for nonlinear system calculated as linear one by lin
         \dot{\Phi(t)} = A(x(t),u(t))\Phi(t) \newline
         \Phi(0) = I
 \end{align}
-Here the matrix $\Phi$ represents the transition of the  
+
+Here the matrix $\Phi$ represents the transition of the 
 Implementation of this method can be found in tutorial. 
 In empirical Gramian method, the Gramian is calculated by perturbing the states and calculation of the outputs:
 \begin{align}
