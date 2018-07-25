@@ -24,6 +24,7 @@ In this tutorial the observability measure based optimal sensor placement is con
 The MATLAB implementation of the tutorial can be downloaded from the above link. The tutorial shows the implementation of the Optimal Sensor Placement discussed in the paper (link to the paper). In this tutorial two different systems are considered:
   1. VSA robot with reaction wheel
   2. Double linked VSA robot
+  
 Examples of this page shows only VSA robot with reaction wheel. However, you can find for second example download flies with well documented code.
 
 
