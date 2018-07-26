@@ -124,6 +124,7 @@ rank([K(:,:,1); K(:,:,2)])
 Observability Gramian for nonlinear system is slightly different fron linear one. In nonlinear system, the observability changes with the states. Also, system could use only specific region where it is observable and controllable. It is impossible to check observability for each state of the operation region. That is why trajectory is generated along which observability gramian is calculated. For VSA system trajectroy looks like following:
 
 ##add trajectory
+![figure 1](traj.png)
 
 Observability Gramian  can be calculated using two different ways: Empirical and Linearized. 
 In linearized case, Gramian for nonlinear system calculated as linear one by linearization of the system and feeding the linearized matrix as following:
