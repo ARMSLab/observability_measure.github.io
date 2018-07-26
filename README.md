@@ -70,7 +70,6 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 
 ## Observability Ranc Condition for Nonlinear Systems 
 
-##Eloborate on what is ORC and what it means
 In linear systems, the observability rank condition provides genral information about system. However, for nonlinear systems, observability could change on states. Therefore, observability is slightly different for Nonlinear systems. The following code shows how to check observability for nonlinear systems in MATLAB using symbolic toolbox as it was described in paper:
 <pre>
 <code class="matlab">
@@ -123,7 +122,6 @@ rank([K(:,:,1); K(:,:,2)])
 ## Observability Gramian
 Observability Gramian for nonlinear system is slightly different fron linear one. In nonlinear system, the observability changes with the states. Also, system could use only specific region where it is observable and controllable. It is impossible to check observability for each state of the operation region. That is why trajectory is generated along which observability gramian is calculated. For VSA system trajectroy looks like following:
 
-##add trajectory
 ![figure 1](traj.png)
 
 Observability Gramian  can be calculated using two different ways: Empirical and Linearized. 
