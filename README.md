@@ -15,7 +15,7 @@ MathJax.Hub.Config({
 
 # Tutorial on Observability Measure
 In this tutorial the observability measure based optimal sensor placement is considered. This tutorial provides detailed disuccsion of the following steps of sensor placement problem:
-1. Optimal Sensor Placement
+1. Problem Statement
 2. Key concepts
 3. Observability Rank Condition for Nonlinear Systems
 4. Observability Gramian
