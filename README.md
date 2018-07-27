@@ -17,6 +17,7 @@ MathJax.Hub.Config({
 In this tutorial the observability measure based optimal sensor placement is considered. This tutorial provides detailed disuccsion of the following steps of sensor placement problem:
 1. Problem Statement
 2. Key concepts
+3. Systems
 3. Observability Rank Condition for Nonlinear Systems
 4. Observability Gramian
 5. Implementation
@@ -61,12 +62,10 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 
 **2.** Observability Measure: Information about Observability for linear systems can be found here [here](https://en.wikipedia.org/wiki/Observability). The main idea of *observability* is if it is possible to restore the states of the system `x` from the sensor readings `y` and inputs `u` given some configuration of sensors `s`. The observability Measure provides the information on how changes in sensor-space maps to changes on state-space, or simplified, how $\Delta y$ is related to $\Delta x$.
 
-**3.** [Observability Gramian](https://en.wikipedia.org/wiki/Observability_Gramian): [Symmetric Positive Definite Matrix](https://en.wikipedia.org/wiki/Positive-definite_matrix) that can be utilized for observability measure. 
+**3.** [Observability Gramian](https://en.wikipedia.org/wiki/Observability_Gramian): [Symmetric Positive Definite Matrix](https://en.wikipedia.org/wiki/Positive-definite_matrix) that can be utilized for observability measure.
 
-**4.** 
-
-##add some visuals
-
+## Systems
+##Here info about systems
 
 ## Observability Ranc Condition for Nonlinear Systems 
 
@@ -192,4 +191,6 @@ m       % the value of cost function
 </pre>
 
 Result of this code: 
-
+``
+[]
+``
