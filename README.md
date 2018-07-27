@@ -129,7 +129,7 @@ In linearized case, Gramian for nonlinear system calculated as linear one by lin
 \begin{align}
         W(t) = \int^{t}_{0}\Phi^T_dC^TC\Phi(t) dt \newline
         \dot{\Phi(t)} = A(x(t),u(t))\Phi(t) \newline
-        \A(x(t),u(t)) = \frac{\partial f(x,u)}{\partial x} \newline
+        A(x(t),u(t)) = \frac{\partial f(x,u)}{\partial x} \newline
         \Phi(0) = I
 \end{align}
 
