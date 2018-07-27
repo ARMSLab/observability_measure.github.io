@@ -38,7 +38,7 @@ Examples of this page shows only VSA robot with reaction wheel. However, you can
 The following system dynamics is considered:
 \begin{align}
 \dot{x} &= f(x,u) \newline
-y&=Cx+Du
+y&=h(x,u)=Cx+Du
 \end{align}
 `x` - states of the system
 
