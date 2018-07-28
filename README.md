@@ -195,7 +195,7 @@ end
 k{ind}  %the sensor optimal configuration
 m       % the value of cost function
 
-s=zeros(7,1);
+s=zeros(7,1);              %representation of the solution as in problem statement
 for ind2=1:length(k{ind})
     s(k{ind}(ind2))=1;
 end
