@@ -198,7 +198,8 @@ s
 </pre>
 
 Result of this code: 
-``
+<pre>
+<code class="matlab">
 ans =
 
      1     3     4     5
@@ -218,4 +219,5 @@ s =
      1
      0
      0
-``
+</code>
+</pre>
