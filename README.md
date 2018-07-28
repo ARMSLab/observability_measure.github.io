@@ -74,7 +74,7 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 
 <img src="schematic_drawing2.png"  alt="figure 2" width="250px"/>
 
-## Observability Ranc Condition for Nonlinear Systems 
+## Observability Rank Condition for Nonlinear Systems 
 
 In linear systems, the observability rank condition provides genral information about system. However, for nonlinear systems, observability could change on states. Therefore, observability is slightly different for Nonlinear systems. The following code shows how to check observability for nonlinear systems in MATLAB using symbolic toolbox as it was described in paper:
 <pre>
