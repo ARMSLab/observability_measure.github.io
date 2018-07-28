@@ -66,9 +66,9 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 
 ## Systems
 **1.** Variable Stiffness Actuator Robot with Reaction Wheel
-![figure 1](schematic_drawing.png)
+![figure 1](schematic_drawing.png=250x)
 **2.** Double-linked VSA robot
-![figure 2](schematic_drawing2.png)
+![figure 2](schematic_drawing2.png=250x)
 
 ## Observability Ranc Condition for Nonlinear Systems 
 
