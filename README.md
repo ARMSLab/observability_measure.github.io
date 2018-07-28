@@ -65,7 +65,10 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 **3.** [Observability Gramian](https://en.wikipedia.org/wiki/Observability_Gramian): [Symmetric Positive Definite Matrix](https://en.wikipedia.org/wiki/Positive-definite_matrix) that can be utilized for observability measure.
 
 ## Systems
-##Here info about systems
+**1.** Variable Stiffness Actuator Robot with Reaction Wheel
+![figure 1](schematic_drawing.png)
+**2.** Double-linked VSA robot
+![figure 2](schematic_drawing2.png)
 
 ## Observability Ranc Condition for Nonlinear Systems 
 
@@ -121,7 +124,7 @@ rank([K(:,:,1); K(:,:,2)])
 ## Observability Gramian
 Observability Gramian for nonlinear system is slightly different fron linear one. In nonlinear system, the observability changes with the states. Also, system could use only specific region where it is observable and controllable. It is impossible to check observability for each state of the operation region. That is why trajectory is generated along which observability gramian is calculated. For VSA system trajectroy looks like following:
 
-![figure 1](traj.png)
+![figure 3](traj.png)
 
 Observability Gramian  can be calculated using two different ways: Empirical and Linearized. 
 In linearized case, Gramian for nonlinear system calculated as linear one by linearization of the system and feeding the linearized matrix as following:
