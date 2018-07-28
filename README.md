@@ -66,7 +66,9 @@ This is [Mixed Integer Problem](http://www.optimization-online.org/DB_FILE/2009/
 
 ## Systems
 **1.** Variable Stiffness Actuator Robot with Reaction Wheel
+
 <img src="schematic_drawing.png" alt="figure 1" width="250px"/>
+
 
 **2.** Double-linked VSA robot
 
