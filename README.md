@@ -187,10 +187,35 @@ end
 
 k{ind}  %the sensor optimal configuration
 m       % the value of cost function
+
+s=zeros(7,1);
+for ind2=1:length(k{ind})
+    s(k{ind}(ind2))=1;
+end
+
+s
 </code>
 </pre>
 
 Result of this code: 
 ``
-[]
+ans =
+
+     1     3     4     5
+
+
+m =
+
+   30.6300
+
+
+s =
+
+     1
+     0
+     1
+     1
+     1
+     0
+     0
 ``
