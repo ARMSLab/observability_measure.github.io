@@ -29,6 +29,25 @@ The [MATLAB](https://www.mathworks.com/products/matlab.html) implementation of t
 Examples of this page shows only VSA robot with reaction wheel. However, you can find for second example download flies with well documented code.
 
 
+## Citation
+If you use our code we kindly ask to cite the following paper:
+<table>
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="8700432">1</a>]
+</td>
+<td class="bibtexitem">
+A.&nbsp;Zhakatayev, B.&nbsp;Rakhim, O.&nbsp;Adiyatov, and H.&nbsp;A. Varol,
+  &ldquo;Optimal Sensor Placement of Variable Impedance Actuated Robots,&rdquo; in <em>2019 IEEE/SICE International Symposium on System Integration (SII)</em>,Jan,2019, pp. 141-146.
+[&nbsp;<a href="/observability_measure.github.io/citation.bib">bib</a>&nbsp;| 
+<a href="https://ieeexplore.ieee.org/abstract/document/8700432">PDF</a>&nbsp;]
+</td>
+</tr>
+</table>
+
+
+
 [//]: <>(1. What is sensor placement problem and observability measure. Key concepts.)
 [//]: <>(2. How Observability is measured)
 [//]: <>(3. How the sensor placement problem is solved)
