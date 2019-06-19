@@ -247,3 +247,13 @@ s =
      0
 </code>
 </pre>
+
+
+## Supplemental Information
+This tutorial is a part of VSA project at [ARMS Lab](http://arms.nu.edu.kz/) of [Nazarbayev University](https://nu.edu.kz/)
+
+If you spot a typo in the tutorial or bug in the source code, please contact us via email: <br/>
+* Bexultan Rakhim (bexultan.rakhim [at] nu.edu.kz )
+* Olzhas Adiyatov (oadiyatov [at] nu.edu.kz )
+
+or [file an issue](https://github.com/ARMSLab/observability_measure.github.io/issues/new) through GitHub.
