@@ -153,7 +153,7 @@ Observability Gramian  can be calculated using two different ways: Empirical and
 In linearized case, Gramian for nonlinear system calculated as linear one by linearization of the system and feeding the linearized matrix as following:
 
 \begin{align}
-        W(t) = \int^{t}_{0}\Phi^T_dC^TC\Phi(t) dt \newline
+        W(t) = \int^{t}_{0}\Phi^{T}(t)C^TC\Phi(t) dt \newline
         \dot{\Phi}(t) = A(x(t),u(t))\Phi(t) \newline
         A(x(t),u(t)) = \frac{\partial f(x,u)}{\partial x} \newline
         \Phi(0) = I
